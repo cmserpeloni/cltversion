@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciamento de Configuração de Software</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f0f2f5;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #dc4a38;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #dc4a38;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 20px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #1abc9c;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 1fr;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .container > section {
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            color: #dc4a38;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #1abc9c;
+            padding-bottom: 10px;
+        }
+
+        p {
+            margin-bottom: 20px;
+        }
+
+        footer {
+            text-align: center;
+            background-color: #dc4a38;
+            color: white;
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 20px;
+            }
+
+            .container > section {
+                margin-bottom: 0;
+            }
+
+            footer {
+                position: static;
+                margin-top: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>O Que é Gerenciamento de Configuração de Software?</h1>
+    </header>
+    <img src="C:\Users\labinfo\Desktop\Trabalho Luiz\git.png" class="img-fluid" alt="...">
+    <div class="container">
+        <section id="controle-versao">
+            <h2>Controle de Versão</h2>
+            <p>O controle de versão, também chamado de controle de fonte, é a prática de rastrear e gerenciar alterações em um código de software. Os sistemas de controle de versão são ferramentas de software que ajudam equipes a gerenciar mudanças ao longo do tempo. Com o aumento da velocidade de desenvolvimento, esses sistemas auxiliam equipes a trabalhar de forma mais rápida e inteligente. São especialmente úteis para equipes de DevOps, reduzindo o tempo de desenvolvimento e aumentando as implementações bem-sucedidas. O Git é uma das ferramentas VCS mais populares hoje, sendo um VCS Distribuído de código aberto.</p>
+        </section>
+
+        <section id="controle-mudanca">
+            <h2>Controle de Mudança</h2>
+            <p>O controle de mudanças é parte de um plano de gestão que lida com solicitações de alterações em projetos. Cada participante pode fazer uma solicitação, que pode variar de pequenas alterações no cronograma até grandes inclusões no projeto. Nem todas as solicitações são aprovadas, mas os participantes principais têm a palavra final. Para garantir que o controle de mudanças funcione bem, é recomendável usar ferramentas como um software de gestão de fluxo de trabalho, que ajuda a gerir o trabalho e a comunicação de forma eficiente em uma equipe ou empresa.</p>
+        </section>
+
+        <section id="integracao-continua">
+            <h2>Integração Contínua</h2>
+            <p>Integração contínua (CI) automatiza a integração de alterações de código em um projeto de software, essencial para o DevOps. Desenvolvedores podem mesclar alterações em um repositório central, onde são feitos builds e testes. Ferramentas automáticas verificam o novo código antes da integração. Um sistema de controle de versão é crucial, complementado por testes de qualidade automatizados e análise de sintaxe. A ausência de CI requer coordenação manual entre desenvolvedores, operações e outras equipes. As equipes de produto devem coordenar lançamentos de funções e correções. A importância da integração contínua é clara para evitar problemas decorrentes da falta dela.</p>
+        </section>
+    </div>
+    <footer>
+        <p>&copy;2024 Feito por Caique Marques Serpeloni <img src="surprise.png" class="rounded mx-auto d-block" alt="..."> </p>
+    </footer>
+
+</body>
+</html>
+
+<!--. Descrição dos Comandos do Git e Estrutura de Branches!!!
+Comandos Git
+git init
+Inicializa um novo repositório Git em um diretório.
+
+git clone <url>
+Clona um repositório remoto para um diretório local.
+
+git add <file>
+Adiciona um arquivo ao índice para ser incluído no próximo commit.
+
+git commit -m "message"
+Cria um commit com uma mensagem descritiva sobre as mudanças.
+
+git status
+Exibe o estado dos arquivos no repositório, mostrando alterações e arquivos não rastreados.
+
+git pull
+Atualiza o repositório local com as últimas alterações do repositório remoto.
+
+git push
+Envia as alterações do repositório local para o repositório remoto.
+
+git branch
+Lista todas as branches no repositório local.
+
+git checkout -b <branch-name>
+Cria uma nova branch e muda para ela.
+
+git merge <branch-name>
+Mescla a branch especificada com a branch atual.
+
+git log
+Exibe o histórico de commits.
+
+Estrutura de Branches
+Para um fluxo de trabalho eficiente, considere a seguinte estrutura de branches:
+
+main
+
+Descrição: Branch principal onde o código está sempre em um estado de produção estável.
+Uso: Apenas commits que passaram por revisão e teste são integrados aqui.
+develop
+
+Descrição: Branch de desenvolvimento onde novas funcionalidades e correções são integradas antes de serem preparadas para produção.
+Uso: Serve como a base para novas funcionalidades e correções de bugs.
+feature/<feature-name>
+
+Descrição: Branches para desenvolvimento de novas funcionalidades.
+Uso: Criadas a partir de develop e mescladas de volta após a conclusão da funcionalidade.
+bugfix/<bugfix-name>
+
+Descrição: Branches para correção de bugs.
+Uso: Criadas a partir de develop e mescladas de volta após a correção.
+hotfix/<hotfix-name>
+
+Descrição: Branches para correção de problemas críticos em produção.
+Uso: Criadas a partir de main e mescladas de volta para main e develop após a correção.
+release/<version-number>
+
+Descrição: Branches para preparar o código para uma nova versão.
+Uso: Criadas a partir de develop quando a versão está pronta para ser liberada e mescladas em main após a liberação.
+Modelo de Trabalho:
+
+Desenvolvimento: As funcionalidades e correções são desenvolvidas em branches dedicadas (feature e bugfix), que são integradas na branch develop.
+Preparação para Liberação: Quando a branch develop está pronta para uma nova versão, uma branch release é criada. Após testes e ajustes, a branch release é mesclada em main e a nova versão é lançada.
+Correções de Emergência: Para problemas críticos em produção, são usadas branches hotfix que são criadas a partir de main e, após a correção, integradas de volta em main e develop-->
